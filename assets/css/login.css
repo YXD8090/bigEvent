@@ -1,0 +1,71 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url(../images/login_bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.log {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+
+/* 字体图标 */
+
+
+/* 中间内同区域 */
+
+.content {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 0 30px;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+}
+
+.content .title {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 设置表单样式 */
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-form-item .layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.layui-form-item .layui-input {
+    padding: 0 30px;
+}
+
+
+/* 登录链接样式 */
+
+.content .link {
+    margin-top: 15px;
+    float: right;
+}
+
+.content .link:hover {
+    color: #999;
+}
