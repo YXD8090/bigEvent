@@ -1,4 +1,3 @@
-$(function() {
     function getUserInfo() {
         let { layer } = layui
         axios({
@@ -27,11 +26,13 @@ $(function() {
 
     }
     getUserInfo();
-    //退出
-    $('.logout').click(function() {
-        //清除本地存储的个人身份验证
-        localStorage.removeItem('token');
-        //跳转到登录页面
-        location.href = './login.html';
+    $(function() {
+
+        //退出
+        $('.logout').click(function() {
+            //清除本地存储的个人身份验证
+            localStorage.removeItem('token');
+            //跳转到登录页面
+            location.href = './login.html';
+        })
     })
-})
