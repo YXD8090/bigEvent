@@ -25,6 +25,11 @@ $(function() {
                 layer.msg('修改密码成功');
                 //清除form表单内容
                 $(this)[0].reset();
+                //重新渲染页面
+                window.parent.getUserInfo();
+                //跳转到登录页面
+                window.parent.location.href = '../login.html';
+                localStorage.removeItem('token')
             })
 
     })
