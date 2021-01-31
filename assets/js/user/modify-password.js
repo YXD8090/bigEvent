@@ -22,8 +22,9 @@ $(function() {
                 if (res.status !== 0) {
                     return layer.msg('修改密码失败')
                 }
-                layer.msg('修改密码成功')
-
+                layer.msg('修改密码成功');
+                //清除form表单内容
+                $(this)[0].reset();
             })
 
     })
