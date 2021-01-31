@@ -1,0 +1,17 @@
+body {
+    background-color: #f2f3f5;
+    padding: 15px;
+}
+
+#add-btn {
+    float: right;
+    margin-top: 6px;
+}
+
+.layui-form {
+    margin-top: 20px;
+}
+
+.layui-form-item {
+    margin-right: 30px;
+}
