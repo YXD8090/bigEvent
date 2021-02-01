@@ -103,10 +103,17 @@ $(function() {
                 console.log(id);
                 axios.get(`/my/article/deletecate/${id}`)
                     .then(res => {
+                        console.log(res);
+                        //校验失败
+                        if (res.status !== 0) {
+                            return layer.msg('删除失败！')
+                        }
                         //重新渲染页面
                         getCateList();
+                        layer.close(index);
+                        layer.msg('删除成功！')
                     })
-                layer.close(index);
+
             });
 
     });
