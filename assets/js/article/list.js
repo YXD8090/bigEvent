@@ -3,7 +3,7 @@ $(function() {
     //获取文章的列表
     getCateList();
     let { form, laypage } = layui;
-
+    //页面渲染函数
     function getCateList() {
         axios.get('/my/article/cates').then(res => {
             console.log(res);
@@ -26,6 +26,9 @@ $(function() {
     function randerTable() {
         axios.get('/my/article/list', { params: query }).then(res => {
             console.log(res);
+            template.defaults.imports.dateFormat = function(date) {
+                return moment(date).format('YYYY/MM/DD HH:mm:ss')
+            };
             let htmlList = template('tpl', res);
             $('tbody').html(htmlList);
             renderPage(res.total);
@@ -67,6 +70,7 @@ $(function() {
         query.cate_id = $('#cate-sel').val();
         query.state = $('#state').val();
         console.log(query.cate_id, query.state);
+        query.pagenum = 1;
         //重新调用randerTable
         randerTable();
     });
@@ -97,9 +101,13 @@ $(function() {
 
 
 
+    });
+    //7.点击编辑跳转到编辑页面
+    $(document).on('click', '.adit-btn', function() {
+        let id = $(this).data('id')
+        location.href = './adit.html?id=' + id
+        window.parent.$('.layui-this').next().find('a').click()
     })
-
-
 
 
 
